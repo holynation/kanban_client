@@ -1,0 +1,7 @@
+Task to be added to the trello
+-- designing the login page
+-- designing the task page - the central part of the application
+-- designing the comments page - where users can comment on each task
+
+New things added to the project
+-- added comment section beecause that would give more communication room between users
