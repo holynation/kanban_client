@@ -10,7 +10,7 @@ const Login = () => {
         localStorage.setItem("userId", username);
         setUsername("");
         // redirects to the Tasks page.
-        navigate("/tasks");
+        navigate("/task");
     };
 
     return (

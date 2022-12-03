@@ -1,5 +1,6 @@
 Task to be added to the trello
 -- designing the login page
+-- implement a simple login auth
 -- designing the task page - the central part of the application
 -- designing the comments page - where users can comment on each task
 -- designing the Nav component
@@ -11,3 +12,7 @@ Task to be added to the trello
 
 New things added to the project
 -- added comment section beecause that would give more communication room between users
+
+Resources used
+-- https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/
+-- https://www.freecodecamp.org/news/how-to-build-a-react-project-with-create-react-app-in-10-steps/

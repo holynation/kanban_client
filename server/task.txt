@@ -1,0 +1,6 @@
+CHALLENGES FACING
+-- having to store users task into the database and fetching them back on the board
+-- keeping track of the task order exactly the way it was added to the board in real time,
+and knowing the position of each board
+
+This is the client side of the kanban board for ALX project
