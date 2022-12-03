@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from "react";
-import socketIO from "socket.io-client";
+import {io} from "socket.io-client";
 import { useParams } from "react-router-dom";
 
 // connect to the socket server
-const socket = socketIO.connect("http://localhost:4000");
+const socket = io.connect("http://localhost:4000");
 const Comments = () => {
+    const { category, id } = useParams();
     const [comment, setComment] = useState("");
+    const [commentList, setCommentList] = useState([]);
+
+    // fetch the comments when the page is loaded to the browser.
+    useEffect(() => {
+        socket.emit("task:fetchComments", { category, id });
+    }, [category, id]);
+    
+    // Listens to the comments event
+    useEffect(() => {
+        socket.on("task:updateComments", (data) => setCommentList(data));
+    }, []);
     
     const addComment = (e) => {
         e.preventDefault();
-        console.log({
+        // sends the comment, the task category, item's id and the userID.
+        socket.emit("task:addComment", {
             comment,
+            category,
+            id,
             userId: localStorage.getItem("userId"),
         });
         setComment("");
@@ -34,7 +49,14 @@ const Comments = () => {
 
             <div className='comments__section'>
                 <h2>Existing Comments</h2>
-                <div></div>
+                {commentList.map((comment) => (
+                    <div key={comment.id}>
+                        <p>
+                            <span style={{ fontWeight: "bold" }}>{comment.text} </span>by{" "}
+                            {comment.name}
+                        </p>
+                    </div>
+                ))}
             </div>
         </div>
     );

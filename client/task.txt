@@ -9,6 +9,7 @@ Task to be added to the trello
 -- implement the comment action for each task board
 -- implement the drag and drop using React Beautiful DND
 -- implement the socket to emit dragged board as an event
+-- implement adding and retrieval of comments on each task.
 
 
 New things added to the project

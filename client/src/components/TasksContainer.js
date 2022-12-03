@@ -20,7 +20,7 @@ const TasksContainer = ({ socket }) => {
 
     // Create a listener for the tasks:update event 
     useEffect(() => {
-        socket.on("tasks:update", (data) => setTasks(data));
+        socket.on("task:update", (data) => setTasks(data));
     }, [socket]);
 
     // this function is the value of the onDragEnd prop
