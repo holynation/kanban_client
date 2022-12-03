@@ -2,6 +2,12 @@ Task to be added to the trello
 -- designing the login page
 -- designing the task page - the central part of the application
 -- designing the comments page - where users can comment on each task
+-- designing the Nav component
+-- designing the AddTask(the form input section) component
+-- implement the TasksContainer which handles the task on the board
+-- implement the comment action for each task board
+-- implement the drag and drop using React Beautiful DND
+
 
 New things added to the project
 -- added comment section beecause that would give more communication room between users
