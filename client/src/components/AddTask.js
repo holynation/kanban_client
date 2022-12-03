@@ -2,10 +2,11 @@ import React, { useState } from "react";
 
 const AddTask = ({ socket }) => {
     const [task, setTask] = useState("");
+
     const handleAddTodo = (e) => {
         e.preventDefault();
-        // Logs the task to the console
-        console.log({ task });
+        // sends the task to the socket.io server
+        socket.emit("tasks:create", { task });
         setTask("");
     };
 
@@ -25,6 +26,5 @@ const AddTask = ({ socket }) => {
         </form>
     );
 };
-
 
 export default AddTask;

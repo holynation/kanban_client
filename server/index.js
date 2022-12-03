@@ -2,12 +2,25 @@ const express = require("express");
 const app = express();
 const PORT = 4000;
 
-const http = require("http").Server(app);
+const http = require("http");
 const cors = require("cors");
+const { Server } = require('socket.io');
 
+// add middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
+const server = http.createServer(app);
+
+// to allow data transfer between client and server domains
+// listening to the client connection
+const socketIO = new Server(server, {
+    cors: {
+        origin: "http://localhost:3000",
+        methods: ["GET", "POST"]
+    }
+});
 
 // Generates a random string
 const fetchID = () => Math.random().toString(36).substring(2, 10);
@@ -60,21 +73,38 @@ let tasks = {
     },
 };
 
-// to allow data transfer between client and server domains
-// listening to the client connection
-const socketIO = require('socket.io')(http, {
-    cors: {
-        origin: "http://localhost:3000"
-    }
-});
-
 // setting up socket.uio for real time connection
 socketIO.on('connection', (socket) => {
     console.log(`Active: ${socket.id} user just connected!`);
 
-    // creating a listener to the taskDragged event on the backend.
-    socket.on("taskDragged", (data) => {
-        console.log(data);
+    // creating a listener to the task:dragged event on the backend.
+    socket.on("task:dragged", (data) => {
+        const {source, destination} = data;
+        // Gets the item that was dragged
+        const itemMoved = {
+            ...tasks[source.droppableId].items[source.index],
+        };
+        console.log("DraggedItem >>> ", itemMoved);
+        // Removes the item from the its source
+        tasks[source.droppableId].items.splice(source.index, 1);
+        // Add the item to its destination using its destination index
+        tasks[destination.droppableId].items.splice(destination.index, 0, itemMoved);
+        // Sends the updated tasks object to the React app
+        socket.emit("tasks:update", tasks);
+
+        //  Print the items at the Source and Destination
+        console.log("Source >>>", tasks[source.droppableId].items);
+        console.log("Destination >>>", tasks[destination.droppableId].items);
+    });
+
+    // event listener for tasks:create
+    socket.on("tasks:create", (data) => {
+        // Constructs an object according to the data structure
+        const newTask = { id: fetchID(), title: data.task, comments: [] };
+        // Adds the task to the pending category
+        tasks["pending"].items.push(newTask);
+        // Fires the tasks event for update
+        socket.emit("tasks:update", tasks);
     });
 
     socket.on('disconnect', () => {
@@ -83,10 +113,11 @@ socketIO.on('connection', (socket) => {
     });
 });
 
+// here is the api code to get the tasks on the server
 app.get("/api", (req, res) => {
     res.json(tasks);
 });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 });

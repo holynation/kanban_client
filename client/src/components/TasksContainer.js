@@ -18,6 +18,11 @@ const TasksContainer = ({ socket }) => {
         fetchTasks();
     }, []);
 
+    // Create a listener for the tasks:update event 
+    useEffect(() => {
+        socket.on("tasks:update", (data) => setTasks(data));
+    }, [socket]);
+
     // this function is the value of the onDragEnd prop
     const handleDragEnd = ({ destination, source }) => {
         if (!destination) return; // when not within draggable area
@@ -26,11 +31,13 @@ const TasksContainer = ({ socket }) => {
             destination.droppableId === source.droppableId
         )
         return;
-        // sending a message to the Node.js server via Socket.io.
-        socket.emit("taskDragged", {
-            source,
-            destination,
-        });
+        // sending a message to the Node.js server via Socket.io
+        if(socket.connected){
+            socket.emit("task:dragged", {
+                source,
+                destination,
+            });
+        }
     };
 
     return (
