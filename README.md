@@ -58,6 +58,5 @@ Oluwaseun Alatise - [Github](https://github.com/holynation) / [Twitter](https://
 Anabel Emebo - [Github](https://github.com/Annahillz) / [Twitter](https://twitter.com/@Annahillz1) / [LinkedIn](https://www.linkedin.com/in/anabel-emebo-5a02041b2/)
 Faith Akinpelu - [Github](https://github.com/Murewaabigal/) / [Twitter](https://twitter.com/FaithAkinpelu2) / [LinkedIn](https://www.linkedin.com/in/akinpelu-faith-303580245)
 
-Second part of Airbnb: Anabel Emebo
 ## License
 Public Domain. No copy write protection. 
