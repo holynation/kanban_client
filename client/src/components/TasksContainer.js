@@ -40,6 +40,13 @@ const TasksContainer = ({ socket }) => {
     }
   };
 
+  const onDeleteAction = (item,task) => {
+    socket.emit("task:deleteTask", {
+      id: item.id,
+      category: task[1].title,
+    });
+  }
+
   return (
     <div className="container">
       {/* dragdropcontext and firing the onDragEnd event once dragged ends */}
@@ -83,12 +90,7 @@ const TasksContainer = ({ socket }) => {
                               </span>
                               <button
                                 className="delete button"
-                                onClick={() => {
-                                  socket.emit("task:deleteTask", {
-                                    id: item.id,
-                                    category: task[1].title,
-                                  });
-                                }}
+                                onClick={() => onDeleteAction(item, task)}
                               >
                                 Delete
                               </button>

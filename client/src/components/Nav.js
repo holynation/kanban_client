@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = ({ showBackButton = false, children }) => {
+
+
   return (
     <nav className="navbar">
       {showBackButton && (
@@ -15,6 +18,13 @@ const Nav = ({ showBackButton = false, children }) => {
         </button>
       )}
       <h3>{children}</h3>
+      <div className="nav-logout">
+      <Link
+        to={'/'}
+      >
+        Logout
+      </Link>
+      </div>
     </nav>
   );
 };

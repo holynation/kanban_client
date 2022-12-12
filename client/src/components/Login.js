@@ -25,6 +25,7 @@ const Login = () => {
           required
           onChange={(e) => setUsername(e.target.value)}
           value={username}
+          placeholder="your username goes here"
         />
         <button>SIGN IN</button>
       </form>
