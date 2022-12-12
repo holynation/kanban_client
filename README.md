@@ -1,64 +1,70 @@
-# ![Kanban Board](https://images.app.goo.gl/1TwxzNLLqXonX2jXA)
-# Kanban Board
-<table>
-<tr>
-<td>
-A Kanban board is a tool that provides a visual system for teams to manage project tasks, workflows and communication. Kanban boards can help streamline assignments and avoid overload since project managers can quickly reference exactly where each step in the process currently resides.
-</td>
-</tr>
-</table>
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Demo
-Here is a working live demo :  https://holynation.github.io/WebApp/
+## Available Scripts
 
+In the project directory, you can run:
 
-## Site
+### `npm start`
 
-### Landing Page
-Here is a landing page :  https://holynation.github.io/WebApp/
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
-## Installation
-This should be run on the client and server directory on this project repository. It would build the application and you can check out it output on a browser
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    npm start
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## [Usage](https://iharsh234.github.io/WebApp/) 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Contributing
-Want to contribute? Great!
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-To fix a bug or enhance an existing module, follow these steps:
+### `npm run eject`
 
-- Fork the repo
-- Create a new branch (`git checkout -b improve-feature`)
-- Make the appropriate changes in the files
-- Add changes to reflect the changes made
-- Commit your changes (`git commit -am 'Improve feature'`)
-- Push to the branch (`git push origin improve-feature`)
-- Create a Pull Request 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Built with 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- [JavaScript - React](https://reactjs.org) - React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta and a community of individual developers and companies.
-- [Node JS - Express](https://expressjs.com) - Express.js, or simply Express, is a back end web application framework for building RESTful APIs with Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.
-- [Socket](http://socket.io) - Socket.IO is an event-driven library for real-time web applications. It enables real-time, bi-directional communication between web clients and servers. It consists of two parts: a client-side library that runs in the browser, and a server-side library for Node.js. Both components have a nearly identical API.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## To-do
-- Add real life authentication
-- Integrate the database for data persistence
-- Optimize unresponsive page and redesign (if applicable)
+## Learn More
 
-## Authors
-Oluwaseun Alatise - [Github](https://github.com/holynation) / [Twitter](https://twitter.com/@Alat_oluwaseun) / [LinkedIn](https://www.linkedin.com/in/oluwaseun-alatise-008366139/)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Anabel Emebo - [Github](https://github.com/Annahillz) / [Twitter](https://twitter.com/@Annahillz1) / [LinkedIn](https://www.linkedin.com/in/anabel-emebo-5a02041b2/)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Faith Akinpelu - [Github](https://github.com/Murewaabigal/) / [Twitter](https://twitter.com/FaithAkinpelu2) / [LinkedIn](https://www.linkedin.com/in/akinpelu-faith-303580245)
+### Code Splitting
 
-## License
-Public Domain. No copy write protection. 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
