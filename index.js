@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const express = require("express");
 const app = express();
 const PORT = 4000;
@@ -15,8 +18,7 @@ const server = http.createServer(app);
 
 // to allow data transfer between client and server domains
 // listening to the client connection
-const clientRemoteUrl = "https://6397a8defff1ec5fcb65341a--zippy-melba-2564e8.netlify.app";
-const clientLocalUrl = "http://localhost:3000";
+const clientRemoteUrl = process.env.APP_API_URL;
 const socketIO = new Server(server, {
   cors: {
     origin: clientRemoteUrl,
