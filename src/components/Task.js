@@ -7,7 +7,7 @@ import { io } from "socket.io-client";
 /* Pass Socket.io into the required components
  * where communications are made with the server
  */
-const socket = io("http://localhost:4000");
+const socket = io(`${process.env.REACT_APP_API_URL}`);
 const Task = () => {
   return (
     <div className="page__container">

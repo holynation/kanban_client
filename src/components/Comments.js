@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Nav from "./Nav";
 
 // connect to the socket server
-const socket = io.connect("http://localhost:4000");
+const socket = io.connect(`${process.env.REACT_APP_API_URL}`);
 const Comments = () => {
   const { category, id } = useParams();
   const [title, setTitle] = useState("");
@@ -13,7 +13,7 @@ const Comments = () => {
 
   // fetch the comments when the page is loaded to the browser.
   useEffect(() => {
-    fetch(`http://localhost:4000/api/tasks/${category}/${id}`).then((res) =>
+    fetch(`${process.env.REACT_APP_API_URL}/api/tasks/${category}/${id}`).then((res) =>
       res.json().then((data) => setTitle(data.title))
     );
     socket.emit("task:fetchComments", { category, id });
