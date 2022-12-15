@@ -15,9 +15,11 @@ const server = http.createServer(app);
 
 // to allow data transfer between client and server domains
 // listening to the client connection
+const clientRemoteUrl = "https://6397a8defff1ec5fcb65341a--zippy-melba-2564e8.netlify.app";
+const clientLocalUrl = "http://localhost:3000";
 const socketIO = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: clientRemoteUrl,
     methods: ["GET", "POST"],
   },
 });
