@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Nav from "./Nav";
 
 // connect to the socket server
-const socket = io.connect("http://localhost:4000");
+const socket = io.connect("https://kanban-server.onrender.com");
 const Comments = () => {
   const { category, id } = useParams();
   const [title, setTitle] = useState("");
